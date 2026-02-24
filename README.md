@@ -16,14 +16,14 @@ If you want to use `crossterm` v0.29.0:
 
 ```toml
 [dependencies]
-termcfg = { version = "0.1.0", features = ["crossterm_0_29_0"] }
+termcfg = { version = "0.2.0", features = ["crossterm_0_29_0"] }
 ```
 
 else if you want to use `termion` v4.0.6:
 
 ```toml
 [dependencies]
-termcfg = { version = "0.1.0", features = ["termion_4_0_6"] }
+termcfg = { version = "0.2.0", features = ["termion_4_0_6"] }
 ```
 
 ## Notation
