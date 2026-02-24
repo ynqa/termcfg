@@ -1,0 +1,42 @@
+[package]
+name = "termcfg"
+version = "0.1.0"
+authors = ["ynqa <un.pensiero.vano@gmail.com>"]
+edition = "2024"
+description = "Terminal shortcut and style string conversions for configuration files"
+license = "MIT"
+readme = "README.md"
+
+[features]
+default = []
+crossterm_0_28_1 = ["dep:crossterm_0_28_1"]
+crossterm_0_29_0 = ["dep:crossterm_0_29_0"]
+termion_4_0_6 = ["dep:termion_4_0_6"]
+
+[dependencies]
+serde = { version = "1.0.228", features = ["derive"] }
+thiserror = "2.0.18"
+
+# Optional dependencies for different terminal backends
+crossterm_0_28_1 = { package = "crossterm", version = "=0.28.1", features = ["serde"], optional = true }
+crossterm_0_29_0 = { package = "crossterm", version = "=0.29.0", features = ["serde"], optional = true }
+termion_4_0_6 = { package = "termion", version = "=4.0.6", optional = true }
+
+[dev-dependencies]
+toml = "0.9.8"
+serde_yaml = "0.9.34"
+
+[[example]]
+name = "toml_crossterm"
+path = "examples/toml_crossterm.rs"
+required-features = ["crossterm_0_29_0"]
+
+[[example]]
+name = "toml_crossterm_0_28_1"
+path = "examples/toml_crossterm.rs"
+required-features = ["crossterm_0_28_1"]
+
+[[example]]
+name = "yaml_termion"
+path = "examples/yaml_termion.rs"
+required-features = ["termion_4_0_6"]
