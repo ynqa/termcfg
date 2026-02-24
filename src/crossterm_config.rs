@@ -1,3 +1,4 @@
+pub mod attribute_serde;
 pub mod content_style_serde;
 mod convert;
 pub mod event_serde;
