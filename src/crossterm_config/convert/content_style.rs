@@ -125,7 +125,7 @@ fn color_to_def(color: Color) -> Result<ColorDef, StyleError> {
     Ok(color_def)
 }
 
-fn parse_attribute_token(token: &str) -> Result<Attribute, StyleError> {
+pub fn parse_attribute_token(token: &str) -> Result<Attribute, StyleError> {
     let token = token.to_ascii_lowercase();
 
     let attribute = match token.as_str() {
@@ -167,7 +167,7 @@ fn parse_attribute_token(token: &str) -> Result<Attribute, StyleError> {
     Ok(attribute)
 }
 
-fn attribute_to_token(attribute: Attribute) -> Option<&'static str> {
+pub fn attribute_to_token(attribute: Attribute) -> Option<&'static str> {
     let token = match attribute {
         Attribute::Reset => "reset",
         Attribute::Bold => "bold",

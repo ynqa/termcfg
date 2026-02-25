@@ -1,6 +1,6 @@
 [package]
 name = "termcfg"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["ynqa <un.pensiero.vano@gmail.com>"]
 edition = "2024"
 description = "Terminal shortcut and style string conversions for configuration files"
